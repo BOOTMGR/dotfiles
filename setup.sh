@@ -3,6 +3,10 @@
 # export kitty terminfo
 sudo ln -s /home/user/.local/kitty.app/share/terminfo/x/xterm-kitty /usr/share/terminfo/x/xterm-kitty
 
+# set kitty as default
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator `which kitty` 50
+sudo update-alternatives --config x-terminal-emulator
+
 # disable visual mode in vim
 echo "set mouse-=a" >> ~/.vimrc
 echo "set ttymouse=" >> ~/.vimrc
